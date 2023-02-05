@@ -1,3 +1,4 @@
+<!-- Página principal -->
 <template>
     <div class="border border-primary border4">
         <h3>Nueva tarea</h3>

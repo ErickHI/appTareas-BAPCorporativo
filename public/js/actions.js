@@ -1,3 +1,4 @@
+//Función para mostrar el formulario para editar una tarea
 function modalUpdateTarea(id){
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer e864a0c9eda63181d7d65bc73e61e3dc6b74ef9b82f7049f1fc7d9fc8f29706025bd271d1ee1822b15d654a84e1a0997b973a46f923cc9977b3fcbb064179ecd");
@@ -55,7 +56,7 @@ function modalUpdateTarea(id){
         });
 }
 
-// Actualizar tarea
+// Función para actualizar tarea
 function updateTarea(id){
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer e864a0c9eda63181d7d65bc73e61e3dc6b74ef9b82f7049f1fc7d9fc8f29706025bd271d1ee1822b15d654a84e1a0997b973a46f923cc9977b3fcbb064179ecd");
@@ -96,7 +97,7 @@ function updateTarea(id){
     .catch(error => console.log('error', error));
 }
 
-// Get tarea individual
+// Función para mostrar los datos de una tarea (crea el modal y realiza la petición get)
 function getTarea(id){
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer e864a0c9eda63181d7d65bc73e61e3dc6b74ef9b82f7049f1fc7d9fc8f29706025bd271d1ee1822b15d654a84e1a0997b973a46f923cc9977b3fcbb064179ecd");
@@ -147,7 +148,7 @@ function getTarea(id){
         });
 }
 
-// Borrar tarea
+// Función para borrar una tarea
 function deleteTarea(id){
     event.preventDefault();
     var confirmValue = confirm("¿Desea eliminar la tarea " + id + " ?");
@@ -176,7 +177,7 @@ function deleteTarea(id){
     }
 }
 
-// Crear nueva tarea
+// Función para crear nueva tarea
 function postTarea(){
     event.preventDefault();
     var titleInput = document.getElementById("titleInput");

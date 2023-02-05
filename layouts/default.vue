@@ -1,3 +1,4 @@
+<!-- Estructura básica de las páginas -->
 <template>
     <div>
         <Navbar></Navbar>

@@ -9,13 +9,15 @@ var requestOptions = {
   redirect: 'follow'
 };
 
+// Petición para obtener todas las tareas
+// Mi token es erickhi
 fetch("https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks?token=erickhi", requestOptions)
   .then(response => response.json())
   .then(result => {
-    //console.log(result);
     llenarTabla(result);
 }).catch(error => console.log('error', error));
 
+//Esta función llena la tabla con las tareas mediante un ciclo
 function llenarTabla(result){
     for(let valor of result){
         console.log(valor.id);
@@ -23,10 +25,10 @@ function llenarTabla(result){
         <tr>
             <td>${ valor.id }</td>
             <td>${ valor.title }</td>
+            <!-- If para poner una insignea u otra dependiendo si está realizada o no la tarea -->
             <td>${ valor.is_completed === 1 ? "<span class='badge text-bg-success'>Completado</span>" : "<span class='badge text-bg-danger'>No completado</span>" }</td>
             <td>${ valor.due_date }</td>
             <td>
-            <!-- Botón para ver tarea -->
                     <i class="ri-eye-line btn btn-primary btn-sm" onclick="getTarea(${ valor.id })"></i>
                     <i class="ri-edit-box-line btn btn-primary btn-sm" onclick="modalUpdateTarea(${ valor.id })"></i>
                     <i class="ri-delete-bin-6-line btn btn-danger btn-sm" onclick="deleteTarea(${ valor.id })"></i>
